@@ -2,40 +2,67 @@
 
 <html>
 
-
 <head>
 	<link rel="stylesheet" href="styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
 <body>
-	<div class = "p1">
-		<h1>
-			Alvin Hua
-		</h1>
-	</div>
+	<div class = center>	
+		<h1>Countdown Until We See Each Other</h1>
+		<p id="demo" class = countdown></p>
+		<p class = countdown></p>
+		<p id = "intro" class = intro></p>
+		<p id = "minions" class = acts></p>
+		<p id = "1d" class = acts></p>
+		<p id = "keshi" class = acts></p>
+		<p id = "ateez" class = acts></p>
+		<p id = "miles" class = acts></p>
+		<p id = "sf-drive" class = acts></p>
+		<p id = "seattle-drive" class = acts></p>
 
-	<div class = "p1">
-		<h3>Experience</h3>
-		<ul>
-			<li class = "bold">Software Engineer @ eQ Technologic | January 2022 - Present</li>
-			<li class = "indent">Building data pipelines and performing ETL jobs</li>
-			<li class = "indent">Java, SQL, Spark</li>
-			<li class = "bold">Software Engineer @ Teach LA | December 2020 - Present</li>
-			<li class = "indent">Teach LA teaches Python and computer science fundamentals to middle schoolers in low-income neighborhoods</li>
-			<li class = "indent">Develop web applications for Teach LA, a non-profit, in my spare time</li>
-			<li class = "indent">TypeScript, React, Node.js</li>
-			<li class = "bold">Software Engineer Intern @ First American | June 2019 - August 2019</li>
-			<li class = "indent">Built ETL pipelines with Amazon Web Services</li>
-			<li class = "indent">Python, S3, RDS, Glue, Cloudformation, Lambda</li>
-		</ul>
+		<script>
+			// Set the date we're counting down to
+			var countDownDate = new Date("Sept 23, 2022 14:30:00").getTime();
+			
+			// Update the count down every 1 second
+			var x = setInterval(function() {
+			
+			  // Get today's date and time
+				var now = new Date().getTime();
+			
+			  // Find the distance between now and the count down date
+			  	var distance = countDownDate - now;
+			
+			  // Time calculations for days, hours, minutes and seconds
+			  	var hours = Math.floor((distance/ (1000 * 60 * 60)));
+			  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			  	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-		<h3>Education</h3>
-		<ul>
-			<li class = "bold">University of California, Los Angeles</li>
-			<li class = "indent">Bachelors Degree, Economics, 2020</li>
-		</ul>
+			  
+			
+			  // Display the result in the element with id="demo"
+			  	document.getElementById("demo").innerHTML = hours + ":" + minutes + ":" + seconds;
 
-		<a href = "https://www.linkedin.com/in/alvin-hua/" class = "bold">LinkedIn</a>
+			  // If the count down is finished, write some text
+				if (distance < 0) {
+					clearInterval(x);
+					document.getElementById("demo").innerHTML = "00:00:00";
+			  	}
+				
+				document.getElementById("intro").innerHTML = "In this time, you could:";
+				document.getElementById("minions").innerHTML = "Watch the entire Despicable Me/Minions franchise " + (hours/7.8).toFixed(2) + " times";
+				document.getElementById("1d").innerHTML = "Listen to One Direction's entire discography " + (hours/5.15).toFixed(2) + " times";
+				document.getElementById("keshi").innerHTML = "Listen to Keshi's entire discography " + (hours/2.45).toFixed(2) + " times";
+				document.getElementById("ateez").innerHTML = "Listen to Ateez's entire discography " + (hours/6.6).toFixed(2) + " times";
+				document.getElementById("miles").innerHTML = "Run " + (hours/0.2).toFixed(2) + " miles";
+				document.getElementById("sf-drive").innerHTML = "Drive to SF from LA and back " + (hours/12).toFixed(2) + " times";
+				document.getElementById("seattle-drive").innerHTML = "Drive to Seattle from LA and back " + (hours/36.4).toFixed(2) + " times";
+			}, 1000);
+		</script>
+
 	</div>
 
 </body>
