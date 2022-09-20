@@ -1,11 +1,20 @@
-.p1 {
-    font-family: Arial, Helvetica, sans-serif;
+.center {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding: 5px; 
+    font-family: 'Inter', sans-serif;
+
+}
+.countdown {
+    font-size: 9em;
 }
 
-.bold{
-    font-weight: bold;
+
+.intro {
+    font-size: 3em;
 }
 
-.indent {
-    margin-left: 40px;
+.acts {
+    font-size: 1em;
 }
